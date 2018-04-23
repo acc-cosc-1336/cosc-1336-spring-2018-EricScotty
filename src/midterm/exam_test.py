@@ -28,7 +28,7 @@ class Test_Midterm(unittest.TestCase):
         5 points
         Test with -5 return value should be 'Invalid arguments'
         '''
-        self.assertEqual('Invalid arguments', get_bonus_pay(-5))
+        self.assertEqual('Invalid arguments', get_bonus_pay_amount(-5))
 
 
 
@@ -37,7 +37,7 @@ class Test_Midterm(unittest.TestCase):
         5 points
         Test with value My String Data return value should be Stanly Ylnats
         '''
-        self.assertEqual('Stanly Ylnats', new_string('stanlY ylnatS'))
+        self.assertEqual('Stanly Ylnats', reverse_string('stanlY ylnatS'))
 
 
 
