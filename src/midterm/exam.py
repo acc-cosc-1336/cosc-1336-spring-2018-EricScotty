@@ -125,8 +125,8 @@ CREATE A TEST CASE IN THE exam_test.py file.
     return max_value
 '''
 def get_list_min_max(list1):
-    min_max = [list1[1], list1[-1]]
-return min_max
+    min_max = [min(list1[1::]), max(list1[1::])]
+    return min_max
 
 
 
@@ -150,30 +150,26 @@ Return Value:
 [2,89]
 
 '''
-import quiz.dat
+
 
 def get_list_min_max_file():
     quiz_file = open('quiz.dat', 'r')
-    max_list_1 = []
-    min_list_1 = []
+
+    minmax = []
 
     for line in quiz_file:
-        line_int = []
         line1 = line.split()
-        
-        for i in line1:
-            if line1[i] is int:
-                line_int.append(line[i])
-                
-        max_list_1.append(max(line_int))
-        
-        min_list_1.append(min(line_int))
-        
-    return_list = [min(min_list_1), max(max_list_1)]
-    
+        i = 1
+        while i < len(line1):
+            line1[i] = int(line1[i])
+            i += 1
+
+        minmax += get_list_min_max(line1)
+
+
     quiz_file.close()
-    
-return return_list
+
+    return get_list_min_max(minmax)
     
 
     
