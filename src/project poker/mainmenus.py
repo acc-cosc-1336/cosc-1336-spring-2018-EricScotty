@@ -123,32 +123,63 @@ class MainMenu:
 
         while self.atm.account = 2:
 
-            self.__display_menu()
+            self.__display_menu2()
             choice = int(input("What do you want to do?"))
 
-            while choice != 8:
-                self.__display_menu1()
-                choice = int(input("What do you want to do?"))
+            if choice = 1:
+                self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[1]
 
-                    if choice == 1:
-                        self.main_menu_actions.__bet()
+            elif choice = 2:
+                self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[2]
 
-                    elif choice == 2:
-                        self.main_menu_actions.__raise()
+            elif choice = 3:
+                self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[3]
 
-                    elif choice == 3:
-                        self.main_menu_actions.__call()
-                        
-                    elif choice == 4:
-                        self.main_menu_actions.__fold()
-                        
-            choice = -1
-            self.__account_menu()
-            self.main_menu_actions.atm.account = int(input("Enter choice: "))
+            elif choice = 4:
+                self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[4]
 
-            if self.main_menu_actions.atm.account == 0:
-                self.main_menu_actions.atm.account = 1
-                self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[random.randint(1,4)]
+            elif choice = 5:
+                self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[5]
+
+            elif choice = 6:
+                self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[6]
+
+            elif choice = 7:
+                self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[7]
+
+            elif choice = 8:
+                self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[8]
+
+            elif choice = 9:
+                self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[9]
+
+            elif choice = 10:
+                self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[10]
+
+
+                while choice != 11:
+                    self.__display_menu1()
+                    choice = int(input("What do you want to do?"))
+
+                        if choice == 1:
+                            self.main_menu_actions.__bet()
+
+                        elif choice == 2:
+                            self.main_menu_actions.__raise()
+
+                        elif choice == 3:
+                            self.main_menu_actions.__call()
+                            
+                        elif choice == 4:
+                            self.main_menu_actions.__fold()
+                            
+                choice = -1
+                self.__account_menu()
+                self.main_menu_actions.atm.account = int(input("Enter choice: "))
+
+                if self.main_menu_actions.atm.account == 0:
+                    self.main_menu_actions.atm.account = 1
+                    self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[random.randint(1,4)]
 
 
         while self.atm.account = 3:
@@ -170,5 +201,4 @@ class MainMenu:
             if self.main_menu_actions.atm.account == 0:
                 self.main_menu_actions.atm.account = 1
                 self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[random.randint(1,4)]
-
 
