@@ -1,7 +1,7 @@
 def faculty_evaluation_result(nev, rar, som, oft, voft, alw):
+
     '''
     Write code to calculate faculty evaluation rating according to asssignment instructions
-
     :param nev: Never
     :param rar: Rarely
     :param som: Sometimes
@@ -10,31 +10,34 @@ def faculty_evaluation_result(nev, rar, som, oft, voft, alw):
     :param alw: Always
     :return: rating as a string
     '''
-    total = nev + rar + som + oft + voft + alw
 
-    nev_ratio = nev / total
-    rar_ratio = rar / total
-    som_ratio = som / total
-    oft_ratio = oft / total
-    voft_ratio = voft / total
-    alw_ratio = alw / total
+    #find total first, then find ratios
 
-    if alw_ratio + voft_ratio >= 0.9:
-        return "Excellent"
-    elif oft_ratio + voft_ratio + alw_ratio >= 0.8:
-        return "Very Good"
-    elif som_ratio + oft_ratio + voft_ratio + alw_ratio >= 0.7:
-        return "Good"
-    elif rar_ratio + som_ratio + oft_ratio + voft_ratio + alw_ratio >= 0.6:
-        return "Needs Improvement"
-    else :
-        return "Unacceptable"
+    total = nev + rar + som + + oft + voft + alw
+    alw_ratio = alw/total
+    voft_ratio = voft/total
+    oft_ratio = oft/total
+    som_ratio = som/total
+    rar_ratio = rar/total
+    nev_ratio = nev/total
+
+    if voft_ratio + alw_ratio >= .90:
+    	return 'Excellent'
+    elif oft_ratio + voft_ratio + alw_ratio >= .80:
+    	return 'Very Good'
+    elif som_ratio + oft_ratio + voft_ratio + alw_ratio >= .70:
+    	return 'Good'
+    elif rar_ratio + som_ratio + oft_ratio + voft_ratio + alw_ratio >= .60:
+    	return 'Needs Improvement'
+    else:
+    	return 'Unacceptable'
 
 def get_ratings(nev,rar,som, oft,voft, alw):
     '''
     Students aren't expected to know this material yet!
     '''
     ratings = []
+
     total = nev + rar + som + oft + voft + alw
 
     ratings.append(round(alw / total, 2))
@@ -45,6 +48,4 @@ def get_ratings(nev,rar,som, oft,voft, alw):
     ratings.append(round(nev / total, 2))
 
     return ratings
-    
 
-    

@@ -1,10 +1,5 @@
 from assignment5 import recursive_decimal_binary
 #write import statement for recursive_decimal_binary
-def main()
-    for num in range(1,256)
-        result = recursive_decimal_binary(num,7)
-        print(num,result)
-
 '''
 Write a for loop from 1 to 255 and call the recursive_decimal_binary function with loop index/target variable
 as an argument and print the decimal and binary value next to each other as follows:
@@ -17,3 +12,10 @@ as an argument and print the decimal and binary value next to each other as foll
 7 00000111
 etc
 '''
+def main():
+    bits = 7
+    for index in range (1,256):
+        result = recursive_decimal_binary(index, bits)
+        print(index,result)
+
+main()
