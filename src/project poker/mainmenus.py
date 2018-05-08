@@ -16,11 +16,6 @@ class MainMenu:
         print("2) Player")
         print("3) Pot")
 
-    def __display_menu0(self):
-        print("Pot Menu")
-        print("1) Display Pot")
-        print("2) exit to account menu")
-
     def __display_menu(self):
         print("Dealer Menu")
         print("1) Deposit")
@@ -28,7 +23,7 @@ class MainMenu:
         print("3) Distribute")
         print("4) Back")
         print("5) Next")
-        print("8) exit")
+        print("6) exit")
 
     def __display_menu1(self):
         print("Player Menu")
@@ -52,6 +47,12 @@ class MainMenu:
         print("10) Player 10")
         print("11) Exit to Account Menu")
 
+    def __display_menu3(self):
+        print(bank_account.get_balance())
+        print(turn_log[-1])
+        print(betlog_log[-1])
+        print("4) Exit to Account Menu")
+
     def run_atm(self):
 
         choice = -1
@@ -64,14 +65,14 @@ class MainMenu:
             self.__display_menu()
             choice = int(input("What do you want to do?"))
 
-            while choice != 8:
+            while choice != 6:
                 self.__display_menu()
                 choice = int(input("What do you want to do?"))
 
                     if choice == 1:
                         self.__display_menu2()
                         choice = int(input("What do you want to do?"))
-                        
+
                             if choice = 1:
                                     self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[1]
 
@@ -104,7 +105,7 @@ class MainMenu:
 
                                 while choice !=11:
                                     self.main_menu_actions.__handle_deposit()
-                        
+
                     elif choice == 2:
                         self.__display_menu2()
                         choice = int(input("What do you want to do?"))
@@ -251,8 +252,8 @@ class MainMenu:
 
                                 while choice != 11:
                                     self.main_menu_actions.__skip_action()
-                                    
-                               
+
+
             choice = -1
             self.__display_menu()
             self.main_menu_actions.atm.account = int(input("Enter choice: "))
@@ -306,10 +307,10 @@ class MainMenu:
 
                             elif choice == 3:
                                 self.main_menu_actions.__call()
-                                
+
                             elif choice == 4:
                                 self.main_menu_actions.__fold()
-                            
+
                             else choice = -1
                                 self.__display_menu2()
                                 self.main_menu_actions.atm.account = int(input("Enter choice: "))
@@ -320,15 +321,14 @@ class MainMenu:
             self.__display_menu()
             choice = int(input("What do you want to do?"))
 
-            while choice != 2:
+            while choice != 4:
                 self.main_menu_actions.atm.customer = self.main_menu_actions.atm.customer_repository.customers[12]
-                self.__display_menu1()
+                self.__display_menu3()
                 choice = int(input("What do you want to do?"))
 
-                    if choice == 1:
-                        self.main_menu_actions.__display_pot()
+                    if choice == 4:
 
-            choice = -1
-            self.__account_menu()
-            self.main_menu_actions.atm.account = int(input("Enter choice: "))
+                        choice = -1
+                        self.__account_menu()
+                        self.main_menu_actions.atm.account = int(input("Enter choice: "))
 
